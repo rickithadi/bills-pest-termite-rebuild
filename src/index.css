@@ -1,0 +1,79 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    /* Core palette — derived from the client's own site (navy/blue trust palette + red CTA accent) */
+    --bg: oklch(99.3% 0.004 240);          /* near-white, faint blue tint */
+    --bg-2: oklch(96% 0.015 235);          /* light blue section band, ~#eaf4fb */
+    --bg-dark: oklch(22% 0.06 255);        /* deep navy, ~#0a2443 */
+    --fg: oklch(24% 0.05 255);             /* primary text, deep navy */
+    --fg-2: oklch(45% 0.045 240);          /* secondary/muted text, slate blue */
+    --accent: oklch(52% 0.14 250);         /* brand blue, ~#176eb3 */
+    --accent-light: oklch(88% 0.045 235);  /* pale blue tint, ~#c9e1f2 */
+    --cta: oklch(53% 0.21 27);             /* red CTA accent, ~#e02a20 */
+    --cta-hover: oklch(46% 0.21 27);
+    --border: oklch(90% 0.02 235);
+    --on-dark: oklch(97% 0.01 235);
+
+    /* Typography — Rubik + Montserrat both found live in the source site's own CSS */
+    --display: 'Rubik', 'Helvetica Neue', Arial, sans-serif;
+    --sans: 'Montserrat', 'Helvetica Neue', Arial, sans-serif;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    font-family: var(--sans);
+    background: var(--bg);
+    color: var(--fg);
+  }
+
+  h1, h2, h3, h4 {
+    font-family: var(--display);
+  }
+
+  section {
+    scroll-margin-top: 88px;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--cta);
+    outline-offset: 3px;
+  }
+
+  a:hover h3, a:focus h3 {
+    color: var(--cta);
+  }
+
+  .prose-content h2 {
+    font-family: var(--display);
+    font-weight: 700;
+    font-size: 1.4rem;
+    color: var(--fg);
+    margin-top: 2rem;
+    margin-bottom: 0.5rem;
+  }
+  .prose-content p { margin-bottom: 1.25rem; }
+  .prose-content ul, .prose-content ol {
+    margin: 0 0 1.25rem 1.25rem;
+    list-style: disc;
+  }
+  .prose-content ol { list-style: decimal; }
+  .prose-content li { margin-bottom: 0.4rem; }
+  .prose-content a {
+    color: var(--cta);
+    font-weight: 600;
+    text-decoration: underline;
+  }
+  .prose-content strong { color: var(--fg); font-weight: 600; }
+
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+}

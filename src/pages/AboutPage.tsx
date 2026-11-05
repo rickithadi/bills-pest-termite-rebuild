@@ -20,17 +20,10 @@ export default function AboutPage() {
   return (
     <>
       <section className="relative overflow-hidden" style={{ background: 'var(--bg-dark)' }}>
-        <div className="absolute inset-0">
-          <img
-            src="https://i0.wp.com/billstermiteco.com/wp-content/uploads/About-Us-Bills-Pest-Termite-Control.jpg?resize=1920%2C1280&ssl=1"
-            alt="About Bill's Pest & Termite Control in Phoenix, Arizona"
-            className="h-full w-full object-cover"
-            style={{ opacity: 0.3 }}
-            loading="eager"
-            fetchPriority="high"
-          />
-          <div className="absolute inset-0" style={{ background: 'linear-gradient(180deg, oklch(22% 0.06 255 / 0.55) 0%, oklch(18% 0.06 255 / 0.92) 100%)' }} />
-        </div>
+        <div
+          className="absolute inset-0"
+          style={{ background: 'radial-gradient(ellipse 80% 60% at 50% 0%, oklch(28% 0.07 255 / 0.9) 0%, oklch(17% 0.05 255) 70%)' }}
+        />
         <div className="relative mx-auto max-w-4xl px-6 py-24 text-center sm:py-32 lg:px-10">
           <p className="text-sm font-semibold uppercase tracking-widest" style={{ color: 'oklch(85% 0.03 90)' }}>
             Family Owned &middot; Arizona Based &middot; Serving Phoenix Since 1992

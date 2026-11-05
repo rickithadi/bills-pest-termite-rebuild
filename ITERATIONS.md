@@ -56,3 +56,17 @@ Repo: https://github.com/rickithadi/bills-pest-termite-rebuild
 **Exit criteria met:** score ≥36/40 ✓, anti-patterns PASS ✓, trust-convention passed ✓, no unresolved P0/P1 ✓, mobile pass at 375/768 ✓, visual verification pass ✓. Proceeding directly to merge — 5-iteration loop not needed.
 
 ---
+
+## ✓ FINAL
+**Merged:** `rebuild/iter-1` → `main` (commit 8e417b6)
+**Final score:** 36/40 — Excellent band
+**Anti-patterns verdict:** PASS
+**Visual verification:** pass at 1440px and 375px, all 5 routes, no horizontal overflow
+**Live URL:** https://bills-pest-termite-rebuild.vercel.app — verified HTTP 200 after merge
+
+**Outstanding items (client action required):**
+1. No email address exists anywhere on the source site — `VITE_FORMSPREE_ID` is unset; client must create a Formspree account and provide a form ID
+2. About page hero uses a clean gradient (no photo) — the client's only two available photos for that slot had unusable baked-in text; client can supply a replacement photo if desired
+3. Out-of-scope pages (per CONTENT.md): ~45 individual city/service-area landing pages and ~15 individual pest-specific service subpages — consolidated into one Service Areas list and one Services overview page for this sample
+4. Single ~165KB gzipped JS bundle (no code-splitting) — acceptable for a pitch sample, worth addressing post-launch
+5. Vercel GitHub App does not have access to this repo yet (deploys so far are manual CLI pushes) — client should add the repo at github.com/settings/installations → Vercel → Configure, so future `git push` calls auto-deploy

@@ -22,8 +22,8 @@ export default function AboutTeaser() {
         </div>
         <div className="order-1 overflow-hidden rounded-2xl lg:order-2">
           <img
-            src="https://i0.wp.com/billstermiteco.com/wp-content/uploads/About-Us-Bills-Pest-Termite-Control.jpg?resize=1080%2C810&ssl=1"
-            alt="Bill's Pest & Termite Control technician at an Arizona property"
+            src="https://i0.wp.com/billstermiteco.com/wp-content/uploads/Comprehensive-Phoenix-Pest-Control-Services.jpeg"
+            alt="Bill's Pest & Termite Control technician treating a Phoenix-area front yard, branded company truck in the driveway"
             className="h-full w-full object-cover"
             loading="lazy"
           />

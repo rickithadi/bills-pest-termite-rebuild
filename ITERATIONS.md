@@ -32,3 +32,27 @@ Repo: https://github.com/rickithadi/bills-pest-termite-rebuild
 - Bundle is a single ~165KB gzipped JS chunk (no code-splitting) — acceptable for a pitch sample, flagged for post-launch optimization
 
 ---
+
+## Iteration 1 — Critique Pass (`/critique --auto`)
+**Commit:** (pending, see below)
+**Branch:** rebuild/iter-1
+**Critique Score:** 36/40 — Excellent band
+**Anti-patterns verdict:** PASS
+
+**Design Health (Nielsen heuristics, summary):** strong on real-world match (plainspoken AZ-specific copy), consistency (red CTA / navy-blue trust palette used uniformly), recognition over recall (phone number and nav always visible), and error recovery (form error state includes a direct phone fallback, branded 404 with clear next steps). Moderate on flexibility/efficiency (no saved state, but multiple contact paths — call/text/form — offer real flexibility for a site this size).
+
+**P1 found and fixed — hero image text collision:** `About-Us-Bills-Pest-Termite-Control.jpg` and `Pest-Control-Services-Phoenix-AZ-...jpg` (both client source photos) have marketing headline text baked into the image pixels from the original Divi site design. Used as full-bleed hero backgrounds, that baked-in text visually collided with the rebuild's own heading text and stayed legible even under a 93%-opacity dark overlay. Neither image is used anywhere in the final build. Replaced with: a clean navy radial-gradient on the About page hero, and two other clean (verified text-free) client photos — `Pest-Control-Company-Phoenix.jpg` on the Services hero and `Comprehensive-Phoenix-Pest-Control-Services.jpeg` on the homepage "Our Story" teaser.
+
+**P2 found and fixed — identical card-grid anti-pattern:** `WhyUs.tsx` ("The Bill's Difference") was a 6-item uniform icon+heading+text grid — exactly the repeated-card pattern the design skill flags as a generic AI-slop tell. Restructured into 3 larger numbered differentiators (asymmetric, more editorial) plus a compact inline credentials strip (Licensed & Insured, Eco-Friendly, Fast Response) for the remaining 3 points — same content, real visual hierarchy instead of a uniform grid.
+
+**Mobile check:**
+- 375px: pass — no horizontal overflow on any of 5 routes tested (scrollWidth === clientWidth)
+- 768px: pass — same, all 5 routes
+
+**Regression check:** navbar present, hero h1 present, footer present, contact form has all 5 expected inputs — all confirmed via automated DOM query, not just visual spot-check.
+
+**Trust-convention re-check:** palette and tone unchanged (navy/blue trust palette, red CTA accent) — still appropriate for a licensed home-services trades business; no drift toward an unconventional aesthetic.
+
+**Exit criteria met:** score ≥36/40 ✓, anti-patterns PASS ✓, trust-convention passed ✓, no unresolved P0/P1 ✓, mobile pass at 375/768 ✓, visual verification pass ✓. Proceeding directly to merge — 5-iteration loop not needed.
+
+---
